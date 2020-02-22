@@ -5,6 +5,7 @@ import com.lyf.forum.dto.GithubUser;
 import com.lyf.forum.mapper.UserMapper;
 import com.lyf.forum.model.User;
 import com.lyf.forum.provider.GithubProvider;
+import com.lyf.forum.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,8 @@ public class AuthorizeController {
     private String redirectUri;
 
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
+
 
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
@@ -49,10 +51,8 @@ public class AuthorizeController {
             String token=UUID.randomUUID().toString();
             user.setToken(token);
             user.setName(githubUser.getName());
-            user.setGmtCreate(System.currentTimeMillis());
-            user.setGmtModified(System.currentTimeMillis());
             user.setAvatarUrl(githubUser.getAvatar_url());
-            userMapper.insertUser(user);
+            userService.createOrUpdate(user);
             response.addCookie(new Cookie("token",token));
 
             return "redirect:/";
@@ -60,5 +60,15 @@ public class AuthorizeController {
             // 登录失败，重新登录
             return "redirect:/";
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletResponse response,HttpServletRequest request){
+        request.getSession().removeAttribute("user");
+        Cookie cookie=new Cookie("token",null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
+
     }
 }

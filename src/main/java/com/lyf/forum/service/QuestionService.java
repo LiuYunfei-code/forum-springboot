@@ -2,6 +2,9 @@ package com.lyf.forum.service;
 
 import com.lyf.forum.dto.PaginationDTO;
 import com.lyf.forum.dto.QuestionDTO;
+import com.lyf.forum.exception.CustomizeErrorCode;
+import com.lyf.forum.exception.CustomizeException;
+import com.lyf.forum.mapper.QuestionExtMapper;
 import com.lyf.forum.mapper.QuestionMapper;
 import com.lyf.forum.mapper.UserMapper;
 import com.lyf.forum.model.Question;
@@ -21,6 +24,8 @@ public class QuestionService {
 
     @Autowired
     private QuestionMapper questionMapper;
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
     @Autowired
     private UserMapper userMapper;
 
@@ -90,13 +95,14 @@ public class QuestionService {
     }
 
     public QuestionDTO getById(Integer id) {
-        QuestionExample questionExample=new QuestionExample();
-        questionExample.createCriteria().andIdEqualTo(id);
-        List<Question> questions=questionMapper.selectByExample(questionExample);
+        Question question=questionMapper.selectByPrimaryKey(id);
+        if (question==null){
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
         QuestionDTO questionDTO=new QuestionDTO();
-        BeanUtils.copyProperties(questions.get(0), questionDTO);
+        BeanUtils.copyProperties(question, questionDTO);
         UserExample userExample=new UserExample();
-        userExample.createCriteria().andIdEqualTo(questions.get(0).getCreator());
+        userExample.createCriteria().andIdEqualTo(question.getCreator());
         List<User> user=userMapper.selectByExample(userExample);
         questionDTO.setUser(user.get(0));
         return questionDTO;
@@ -108,13 +114,23 @@ public class QuestionService {
             // 创建
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(System.currentTimeMillis());
+            question.setCommentCount(0);
+            question.setLikeCount(0);
+            question.setViewCount(0);
             questionMapper.insert(question);
         }else {
             // 更新
             question.setGmtModified(System.currentTimeMillis());
             QuestionExample questionExample=new QuestionExample();
             questionExample.createCriteria().andIdEqualTo(question.getId());
-            questionMapper.updateByExampleSelective(question,questionExample);
+            Integer updated=questionMapper.updateByExampleSelective(question,questionExample);
+            if (updated!=1){
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
         }
+    }
+
+    public void incView(Integer id){
+        questionExtMapper.incView(id);
     }
 }

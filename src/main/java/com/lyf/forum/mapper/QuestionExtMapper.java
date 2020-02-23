@@ -136,5 +136,6 @@ public interface QuestionExtMapper {
      */
     int updateByPrimaryKey(Question record);
 
-    int incView(@Param("id")Integer id);
+    int incView(@Param("id") Long id);
+    int incCommentCount(@Param("id") Long id);
 }

@@ -17,6 +17,23 @@ body {
     font-weight: normal;
     color: #999;
 }
+.question-tag{
+    margin-right: 5px;
+}
+.question-related{
+    list-style: none;
+    padding-left: 0;
+    line-height: 25px;
+}
+.question-related a:hover{
+    cursor: pointer;
+    list-style: none;
+    color: #2aabd2;
+    text-decoration: unset;
+}
+.glyphicon-tags{
+    margin-right: 5px;
+}
 
 .media-object {
     width: 40px;
@@ -31,7 +48,65 @@ body {
     font-size: 13px;
     color: #999;
 }
-.jumbotron{
+
+.jumbotron {
     margin-top: 100px;
     margin-left: 230px;
+}
+
+.comment {
+    margin: 10px 0;
+}
+.sub-comments{
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+.sub-comments .btn{
+    margin: 10px 0;
+}
+.sub-comment-menu{
+    color: #999;
+    margin-top: 0;
+}
+.sub-comment-media-heading{
+    margin-bottom: 15px;
+    margin-top: 13px;
+}
+.btn-comment {
+    float: right;
+    margin-bottom: 10px;
+}
+
+hr {
+    margin-top: 2px;
+}
+
+.question-media-heading {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.comment-menu {
+    color: #999;
+    margin-top: 10px;
+
+}
+
+.comment-menu .icon {
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.comment-menu .icon:hover {
+    color: #499ef3;
+}
+.comment-menu .active {
+    color: #499ef3;
+}
+
+.comment-content {
+    margin-top: 15px;
 }

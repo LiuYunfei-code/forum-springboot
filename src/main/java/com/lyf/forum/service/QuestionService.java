@@ -11,13 +11,16 @@ import com.lyf.forum.model.Question;
 import com.lyf.forum.model.QuestionExample;
 import com.lyf.forum.model.User;
 import com.lyf.forum.model.UserExample;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class QuestionService {
@@ -47,7 +50,10 @@ public class QuestionService {
 
         Integer offset = size * (page - 1);
 
-        List<Question> questionList = questionMapper.selectByExampleWithRowbounds(new QuestionExample(),new RowBounds(offset,size));
+        QuestionExample questionExample=new QuestionExample();
+        // 按创建时间倒序
+        questionExample.setOrderByClause("gmt_create desc");
+        List<Question> questionList = questionMapper.selectByExampleWithRowbounds(questionExample,new RowBounds(offset,size));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         for (Question question : questionList) {
             UserExample userExample=new UserExample();
@@ -136,5 +142,24 @@ public class QuestionService {
      */
     public void incView(Long id){
         questionExtMapper.incView(id);
+    }
+
+    public List<QuestionDTO> selectRelated(QuestionDTO queryDTO) {
+        if (StringUtils.isBlank(queryDTO.getTag())){
+            return new ArrayList<>();
+        }
+        String[] tags= queryDTO.getTag().split(",|，");
+        String regexpTag= Arrays.stream(tags).collect(Collectors.joining("|"));
+        Question question=new Question();
+        question.setId(queryDTO.getId());
+        question.setTag(regexpTag);
+
+        List<Question> questions=questionExtMapper.selectRelated(question);
+        List<QuestionDTO> questionDTOS=questions.stream().map(q -> {
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(q,questionDTO);
+            return questionDTO;
+        }).collect(Collectors.toList());
+        return questionDTOS;
     }
 }

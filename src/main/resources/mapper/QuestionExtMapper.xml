@@ -31,4 +31,7 @@
     set comment_count = comment_count + 1
     where id=#{id}
   </update>
+  <select id="selectRelated" parameterType="com.lyf.forum.model.Question" resultMap="BaseResultMap">
+    select * from question where id!=#{id} and tag REGEXP #{tag}
+  </select>
 </mapper>

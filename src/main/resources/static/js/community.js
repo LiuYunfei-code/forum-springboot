@@ -44,13 +44,14 @@ function postComment(parentId, type, content) {
             "content": content
         }),
         success: function (response) {
+            console.log(response);
             if (response.code == 200) {
                 window.location.reload();
                 // alert(response.message);
 
                 // debugger;
                 $(" #comment-content ").val("");
-                $(" #sub-comment-content ").val("");
+                // $(" #sub-comment-content ").val("");
                 // appendToTarget(parentId, type)
             } else {
                 if (response.code == 2003) {

@@ -110,3 +110,10 @@ hr {
 .comment-content {
     margin-top: 15px;
 }
+.notification-desc{
+    margin-left: 38px;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}

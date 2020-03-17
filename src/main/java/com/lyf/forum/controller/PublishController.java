@@ -5,6 +5,8 @@ import com.lyf.forum.mapper.QuestionMapper;
 import com.lyf.forum.model.Question;
 import com.lyf.forum.model.User;
 import com.lyf.forum.service.QuestionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class PublishController {
+    final Logger logger= LoggerFactory.getLogger(getClass());
     @Autowired
     private QuestionService questionService;
     @GetMapping("/publish")
@@ -43,6 +46,7 @@ public class PublishController {
                             Model model){
 
 
+        logger.info("{}",description);
         model.addAttribute("title",title);
         model.addAttribute("description",description);
         model.addAttribute("tag",tag);

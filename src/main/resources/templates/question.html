@@ -8,10 +8,21 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/community.css">
+    <link rel="stylesheet" href="/editor.md/css/editormd.preview.css"/>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
     <script src="/js/community.js" type="application/javascript"></script>
     <script src="/js/moment.js"></script>
+    <script src="/editor.md/editormd.js"></script>
+    <script src="/editor.md/lib/marked.min.js"></script>
+    <script src="/editor.md/lib/prettify.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var testView = editormd.markdownToHTML("description", {
+                htmlDecode: true,  // Enable / disable HTML tag encode.
+            });
+        });
+    </script>
 
 </head>
 <body>
@@ -19,7 +30,7 @@
 
 <div class="container-fluid main">
     <div class="row">
-<!--        左边主体内容-->
+        <!--        左边主体内容-->
         <div class="col-md-9 col-xs-12 col-sm-12">
 
             <div class="col-md-12 col-xs-12 col-sm-12">
@@ -35,9 +46,12 @@
                 <span th:text="${question.viewCount}"></span>
             </span>
                 <hr>
-                <span th:text="${question.description}"></span>
+                <div id="description">
+                    <textarea th:text="${question.description}"></textarea>
+                </div>
                 <hr>
-                <span class="label label-info question-tag" th:each="tag:${question.tag.split('，|,')}"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><span th:text="${tag}"></span></span>
+                <span class="label label-info question-tag" th:each="tag:${question.tag.split('，|,')}"><span
+                        class="glyphicon glyphicon-tags" aria-hidden="true"></span><span th:text="${tag}"></span></span>
                 <hr>
                 <a th:href="@{'/publish/'+${question.id}}" class="community-menu"
                    th:if="${session.user != null && session.user.id == question.creator}">
@@ -126,7 +140,8 @@
                                 <!--                                </div>-->
 
                                 <div class="col-md-12 col-xs-12 col-sm-12">
-                                    <input type="text" class="form-control" id="sub-comment-content" placeholder="评论一下..."
+                                    <input type="text" class="form-control" id="sub-comment-content"
+                                           placeholder="评论一下..."
                                            th:id="${'input-'+comment.id}">
                                     <button type="button" class="btn btn-success pull-right" th:data-id="${comment.id}"
                                             onclick="comComment(this)">评论
@@ -163,7 +178,7 @@
             </div>
 
         </div>
-<!--        右边相关内容-->
+        <!--        右边相关内容-->
         <div class="col-md-3 col-xs-12">
             <h3>发起人</h3>
             <div class="media">
@@ -183,9 +198,10 @@
         </div>
 
         <div class="col-md-3 col-xs-12"><h3>相关问题</h3>
-        <ul class="question-related">
-            <li th:each="related : ${relatedQuestions}"><a th:href="@{'/question/'+${related.id}}" th:text="${related.title}"></a></li>
-        </ul>
+            <ul class="question-related">
+                <li th:each="related : ${relatedQuestions}"><a th:href="@{'/question/'+${related.id}}"
+                                                               th:text="${related.title}"></a></li>
+            </ul>
         </div>
     </div>
 </div>

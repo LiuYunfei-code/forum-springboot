@@ -30,6 +30,7 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li th:if="${session.user!=null}"><a href="/publish">发起</a></li>
+                    <li><a href="/profile/replies">通知 <span class="badge" th:if="${session.unreadCount != 0}" th:text="${session.unreadCount}"></span></a></li>
                     <li th:if="${session.user== null}"><a
                             href="https://github.com/login/oauth/authorize?client_id=8916c34a3a59a70315b5&redirect_uri=http://localhost:8080/callback&scope=user&state=1">登录</a>
                     </li>

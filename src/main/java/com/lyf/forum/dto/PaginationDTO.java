@@ -3,8 +3,8 @@ package com.lyf.forum.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaginationDTO {
-    private List<QuestionDTO> questions;
+public class PaginationDTO<T> {
+    private List<T> data;
     private boolean showPrevious;
     private boolean showNext;
     private boolean showFirstPage;
@@ -12,8 +12,10 @@ public class PaginationDTO {
     private Integer totalPage;
     private List<Integer> pages=new ArrayList<>();
     private Integer page;
+    private Integer totalCount;
 
     public void setPagination(Integer totalCount, Integer page, Integer size) {
+        this.totalCount=totalCount;
         if (totalCount%size==0){
             totalPage=totalCount/size;
         }else {
@@ -85,12 +87,20 @@ public class PaginationDTO {
         this.page = page;
     }
 
-    public List<QuestionDTO> getQuestions() {
-        return questions;
+    public List<T> getData() {
+        return data;
     }
 
-    public void setQuestions(List<QuestionDTO> questions) {
-        this.questions = questions;
+    public void setData(List<T> data) {
+        this.data = data;
+    }
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     public boolean isShowPrevious() {

@@ -34,4 +34,24 @@
   <select id="selectRelated" parameterType="com.lyf.forum.model.Question" resultMap="BaseResultMap">
     select * from question where id!=#{id} and tag REGEXP #{tag}
   </select>
+  <select id="countBySearch" resultType="java.lang.Long">
+    select count(*) from question
+    <if test="search != null">
+      <where>
+        title REGEXP #{search}
+      </where>
+    </if>
+  </select>
+
+  <select id="selectBySearch" resultMap="BaseResultMap">
+    select *
+    from question
+    <if test="search != null">
+      <where>
+        title REGEXP #{search}
+      </where>
+    </if>
+    order by gmt_create desc
+    limit #{offset},#{size}
+  </select>
 </mapper>

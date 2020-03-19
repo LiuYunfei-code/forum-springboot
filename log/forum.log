@@ -1,0 +1,281 @@
+2020-03-19 09:36:00.727  INFO 17832 --- [main] com.lyf.forum.ForumApplication           : Starting ForumApplication on DESKTOP-5FDRO46 with PID 17832 (E:\OneDrive\Projects\forum\target\classes started by lyf13 in E:\OneDrive\Projects\forum)
+2020-03-19 09:36:00.730  INFO 17832 --- [main] com.lyf.forum.ForumApplication           : No active profile set, falling back to default profiles: default
+2020-03-19 09:36:00.840  WARN 17832 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-03-19 09:36:01.907  INFO 17832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-19 09:36:01.916  INFO 17832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-19 09:36:01.916  INFO 17832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-03-19 09:36:01.917  INFO 17832 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-03-19 09:36:01.917  INFO 17832 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-19 09:36:01.918  INFO 17832 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-19 09:36:01.921  INFO 17832 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-03-19 09:36:02.016  INFO 17832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-19 09:36:02.016  INFO 17832 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1202 ms
+2020-03-19 09:36:02.642  INFO 17832 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-19 09:36:02.696  INFO 17832 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-19 09:36:02.860  INFO 17832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-19 09:36:02.867  INFO 17832 --- [main] com.lyf.forum.ForumApplication           : Started ForumApplication in 2.742 seconds (JVM running for 3.607)
+2020-03-19 09:37:36.840  INFO 17832 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-19 09:37:36.841  INFO 17832 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-19 09:37:36.847  INFO 17832 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-03-19 09:37:36.897  INFO 17832 --- [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-19 09:37:37.033  INFO 17832 --- [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-19 09:37:37.042 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:37:37.059 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:37:37.171 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.405  WARN 17832 --- [http-nio-8080-exec-10] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [227] milliseconds.
+2020-03-19 09:37:37.410 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:37:37.410 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:37:37.412 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:37:37.431 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from question 
+2020-03-19 09:37:37.431 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2020-03-19 09:37:37.432 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2020-03-19 09:37:37.433 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.Q.selectBySearch                 : ==>  Preparing: select * from question order by gmt_create desc limit ?,? 
+2020-03-19 09:37:37.433 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 16(Integer)
+2020-03-19 09:37:37.442 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.Q.selectBySearch                 : <==      Total: 16
+2020-03-19 09:37:37.443 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.444 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.445 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.450 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.451 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.451 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.453 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.453 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.454 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.455 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.455 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.456 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.458 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.458 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.459 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.460 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.461 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.461 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.462 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.463 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.464 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.465 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.465 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.466 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.467 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.467 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.468 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.469 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.470 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.471 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.472 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.472 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.474 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.475 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.476 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.478 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.479 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.480 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.480 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.482 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.482 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.483 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.484 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.485 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.487 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:37.488 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:37:37.488 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:37:37.489 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:38.004 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:37:38.007 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:37:38.008 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:37:38.008 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:37:38.009 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:37:38.009 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:37:38.009 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:37:38.009 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:37:38.010 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:37:38.010 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:38.019 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:38.018 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:38.019 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:37:38.019 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:37:38.018 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:38.019 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:37:38.019 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:37:38.020 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:37:38.020 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:37:38.020 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:37:38.009 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:37:38.020 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:37:38.021 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:38.022 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:37:38.023 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:37:38.026 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:37:38.029 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:37:38.034 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:37:38.038 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:37:38.040 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:37:38.166 DEBUG 17832 --- [http-nio-8080-exec-4] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:37:38.166 DEBUG 17832 --- [http-nio-8080-exec-4] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:37:38.167 DEBUG 17832 --- [http-nio-8080-exec-4] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:37:38.168 DEBUG 17832 --- [http-nio-8080-exec-4] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:37:38.169 DEBUG 17832 --- [http-nio-8080-exec-4] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:37:38.170 DEBUG 17832 --- [http-nio-8080-exec-4] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:14.090 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:14.091 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:14.091 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:14.093 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:14.093 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:14.095 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:14.097 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.Q.selectByPrimaryKey             : ==>  Preparing: select id, title, gmt_create, gmt_modified, creator, comment_count, view_count, like_count, tag , description from question where id = ? 
+2020-03-19 09:38:14.098 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.Q.selectByPrimaryKey             : ==> Parameters: 41(Long)
+2020-03-19 09:38:14.099 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.Q.selectByPrimaryKey             : <==      Total: 1
+2020-03-19 09:38:14.100 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:38:14.100 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:38:14.101 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:14.102 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from question where id!=? and tag REGEXP ? 
+2020-03-19 09:38:14.102 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.QuestionExtMapper.selectRelated  : ==> Parameters: 41(Long), Spring(String)
+2020-03-19 09:38:14.104 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.QuestionExtMapper.selectRelated  : <==      Total: 9
+2020-03-19 09:38:14.105 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.QuestionExtMapper.incView   : ==>  Preparing: update question set view_count = view_count + 1 where id=? 
+2020-03-19 09:38:14.105 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.QuestionExtMapper.incView   : ==> Parameters: 41(Long)
+2020-03-19 09:38:14.210 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2020-03-19 09:38:14.218 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.CommentMapper.selectByExample    : ==>  Preparing: select id, parent_id, type, commentator, gmt_create, gmt_modified, like_count, content from comment WHERE ( parent_id = ? and type = ? ) order by gmt_create desc 
+2020-03-19 09:38:14.219 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.CommentMapper.selectByExample    : ==> Parameters: 41(Long), 1(Integer)
+2020-03-19 09:38:14.220 DEBUG 17832 --- [http-nio-8080-exec-3] c.l.f.m.CommentMapper.selectByExample    : <==      Total: 0
+2020-03-19 09:38:14.327 DEBUG 17832 --- [http-nio-8080-exec-2] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:14.329 DEBUG 17832 --- [http-nio-8080-exec-2] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:14.339 DEBUG 17832 --- [http-nio-8080-exec-1] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:14.340 DEBUG 17832 --- [http-nio-8080-exec-1] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:14.340 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:14.340 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:14.340 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:14.340 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:14.341 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:14.341 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:14.341 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:14.341 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:14.341 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:14.342 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:14.342 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:14.342 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:14.343 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:14.343 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:14.343 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:14.343 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:14.345 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:14.345 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:14.346 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:14.346 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:14.347 DEBUG 17832 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:14.353 DEBUG 17832 --- [http-nio-8080-exec-1] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:14.353 DEBUG 17832 --- [http-nio-8080-exec-6] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:14.354 DEBUG 17832 --- [http-nio-8080-exec-1] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:14.355 DEBUG 17832 --- [http-nio-8080-exec-1] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:14.358 DEBUG 17832 --- [http-nio-8080-exec-1] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:14.359 DEBUG 17832 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:14.361 DEBUG 17832 --- [http-nio-8080-exec-7] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:14.366 DEBUG 17832 --- [http-nio-8080-exec-2] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:14.368 DEBUG 17832 --- [http-nio-8080-exec-2] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:14.369 DEBUG 17832 --- [http-nio-8080-exec-2] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:14.370 DEBUG 17832 --- [http-nio-8080-exec-2] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:33.513 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:33.513 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:33.515 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:33.516 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:33.517 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:33.517 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:33.518 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.Q.selectByPrimaryKey             : ==>  Preparing: select id, title, gmt_create, gmt_modified, creator, comment_count, view_count, like_count, tag , description from question where id = ? 
+2020-03-19 09:38:33.518 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.Q.selectByPrimaryKey             : ==> Parameters: 39(Long)
+2020-03-19 09:38:33.519 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.Q.selectByPrimaryKey             : <==      Total: 1
+2020-03-19 09:38:33.520 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:38:33.520 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:38:33.522 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:33.522 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from question where id!=? and tag REGEXP ? 
+2020-03-19 09:38:33.523 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.QuestionExtMapper.selectRelated  : ==> Parameters: 39(Long), Spring(String)
+2020-03-19 09:38:33.526 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.QuestionExtMapper.selectRelated  : <==      Total: 9
+2020-03-19 09:38:33.526 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.QuestionExtMapper.incView   : ==>  Preparing: update question set view_count = view_count + 1 where id=? 
+2020-03-19 09:38:33.526 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.QuestionExtMapper.incView   : ==> Parameters: 39(Long)
+2020-03-19 09:38:33.528 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2020-03-19 09:38:33.530 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.CommentMapper.selectByExample    : ==>  Preparing: select id, parent_id, type, commentator, gmt_create, gmt_modified, like_count, content from comment WHERE ( parent_id = ? and type = ? ) order by gmt_create desc 
+2020-03-19 09:38:33.530 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.CommentMapper.selectByExample    : ==> Parameters: 39(Long), 1(Integer)
+2020-03-19 09:38:33.531 DEBUG 17832 --- [http-nio-8080-exec-8] c.l.f.m.CommentMapper.selectByExample    : <==      Total: 0
+2020-03-19 09:38:46.632 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:38:46.633 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:38:46.635 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:46.636 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:38:46.636 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:38:46.637 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:38:46.637 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.Q.selectByPrimaryKey             : ==>  Preparing: select id, title, gmt_create, gmt_modified, creator, comment_count, view_count, like_count, tag , description from question where id = ? 
+2020-03-19 09:38:46.638 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.Q.selectByPrimaryKey             : ==> Parameters: 37(Long)
+2020-03-19 09:38:46.746 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.Q.selectByPrimaryKey             : <==      Total: 1
+2020-03-19 09:38:46.747 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:38:46.747 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:38:46.748 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:38:46.749 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from question where id!=? and tag REGEXP ? 
+2020-03-19 09:38:46.749 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.QuestionExtMapper.selectRelated  : ==> Parameters: 37(Long), Spring(String)
+2020-03-19 09:38:46.752 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.QuestionExtMapper.selectRelated  : <==      Total: 9
+2020-03-19 09:38:46.752 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.QuestionExtMapper.incView   : ==>  Preparing: update question set view_count = view_count + 1 where id=? 
+2020-03-19 09:38:46.752 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.QuestionExtMapper.incView   : ==> Parameters: 37(Long)
+2020-03-19 09:38:46.775 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2020-03-19 09:38:46.776 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.CommentMapper.selectByExample    : ==>  Preparing: select id, parent_id, type, commentator, gmt_create, gmt_modified, like_count, content from comment WHERE ( parent_id = ? and type = ? ) order by gmt_create desc 
+2020-03-19 09:38:46.776 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.CommentMapper.selectByExample    : ==> Parameters: 37(Long), 1(Integer)
+2020-03-19 09:38:46.777 DEBUG 17832 --- [http-nio-8080-exec-5] c.l.f.m.CommentMapper.selectByExample    : <==      Total: 0
+2020-03-19 09:43:27.962  INFO 6876 --- [main] com.lyf.forum.ForumApplication           : Starting ForumApplication on DESKTOP-5FDRO46 with PID 6876 (E:\OneDrive\Projects\forum\target\classes started by lyf13 in E:\OneDrive\Projects\forum)
+2020-03-19 09:43:27.966  INFO 6876 --- [main] com.lyf.forum.ForumApplication           : No active profile set, falling back to default profiles: default
+2020-03-19 09:43:28.259  WARN 6876 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-03-19 09:43:29.314  INFO 6876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-19 09:43:29.322  INFO 6876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-19 09:43:29.322  INFO 6876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-03-19 09:43:29.324  INFO 6876 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-03-19 09:43:29.324  INFO 6876 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-19 09:43:29.324  INFO 6876 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-19 09:43:29.328  INFO 6876 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-03-19 09:43:29.423  INFO 6876 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-19 09:43:29.424  INFO 6876 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1329 ms
+2020-03-19 09:43:30.060  INFO 6876 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-19 09:43:30.114  INFO 6876 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-19 09:43:30.275  INFO 6876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-19 09:43:30.289  INFO 6876 --- [main] com.lyf.forum.ForumApplication           : Started ForumApplication in 3.116 seconds (JVM running for 4.42)
+2020-03-19 09:44:00.465  INFO 6876 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-19 09:44:00.466  INFO 6876 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-19 09:44:00.474  INFO 6876 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-03-19 09:44:00.538  INFO 6876 --- [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-19 09:44:00.692  INFO 6876 --- [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-19 09:44:00.700 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:44:00.717 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:44:00.813 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:44:01.048  WARN 6876 --- [http-nio-8080-exec-10] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [229] milliseconds.
+2020-03-19 09:44:01.052 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:44:01.052 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:44:01.054 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:44:01.068 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.Q.selectByPrimaryKey             : ==>  Preparing: select id, title, gmt_create, gmt_modified, creator, comment_count, view_count, like_count, tag , description from question where id = ? 
+2020-03-19 09:44:01.068 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.Q.selectByPrimaryKey             : ==> Parameters: 37(Long)
+2020-03-19 09:44:01.070 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.Q.selectByPrimaryKey             : <==      Total: 1
+2020-03-19 09:44:01.075 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:44:01.076 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:44:01.078 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:44:01.081 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from question where id!=? and tag REGEXP ? 
+2020-03-19 09:44:01.081 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.QuestionExtMapper.selectRelated  : ==> Parameters: 37(Long), Spring(String)
+2020-03-19 09:44:01.085 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.QuestionExtMapper.selectRelated  : <==      Total: 9
+2020-03-19 09:44:01.087 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.QuestionExtMapper.incView   : ==>  Preparing: update question set view_count = view_count + 1 where id=? 
+2020-03-19 09:44:01.088 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.QuestionExtMapper.incView   : ==> Parameters: 37(Long)
+2020-03-19 09:44:01.254 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2020-03-19 09:44:01.262 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.CommentMapper.selectByExample    : ==>  Preparing: select id, parent_id, type, commentator, gmt_create, gmt_modified, like_count, content from comment WHERE ( parent_id = ? and type = ? ) order by gmt_create desc 
+2020-03-19 09:44:01.263 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.CommentMapper.selectByExample    : ==> Parameters: 37(Long), 1(Integer)
+2020-03-19 09:44:01.266 DEBUG 6876 --- [http-nio-8080-exec-10] c.l.f.m.CommentMapper.selectByExample    : <==      Total: 0
+2020-03-19 09:44:05.585 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( token = ? ) 
+2020-03-19 09:44:05.586 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 3e18148f-923d-4902-acf6-bfb31631b1c8(String)
+2020-03-19 09:44:05.587 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:44:05.589 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2020-03-19 09:44:05.589 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : ==> Parameters: 7(Long), 0(Integer)
+2020-03-19 09:44:05.591 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.N.countByExample                 : <==      Total: 1
+2020-03-19 09:44:05.593 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.Q.selectByPrimaryKey             : ==>  Preparing: select id, title, gmt_create, gmt_modified, creator, comment_count, view_count, like_count, tag , description from question where id = ? 
+2020-03-19 09:44:05.594 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.Q.selectByPrimaryKey             : ==> Parameters: 35(Long)
+2020-03-19 09:44:05.595 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.Q.selectByPrimaryKey             : <==      Total: 1
+2020-03-19 09:44:05.596 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user WHERE ( id = ? ) 
+2020-03-19 09:44:05.596 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : ==> Parameters: 7(Long)
+2020-03-19 09:44:05.597 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-03-19 09:44:05.598 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from question where id!=? and tag REGEXP ? 
+2020-03-19 09:44:05.598 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.QuestionExtMapper.selectRelated  : ==> Parameters: 35(Long), Spring(String)
+2020-03-19 09:44:05.603 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.QuestionExtMapper.selectRelated  : <==      Total: 9
+2020-03-19 09:44:05.607 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.QuestionExtMapper.incView   : ==>  Preparing: update question set view_count = view_count + 1 where id=? 
+2020-03-19 09:44:05.607 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.QuestionExtMapper.incView   : ==> Parameters: 35(Long)
+2020-03-19 09:44:05.610 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2020-03-19 09:44:05.613 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.CommentMapper.selectByExample    : ==>  Preparing: select id, parent_id, type, commentator, gmt_create, gmt_modified, like_count, content from comment WHERE ( parent_id = ? and type = ? ) order by gmt_create desc 
+2020-03-19 09:44:05.613 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.CommentMapper.selectByExample    : ==> Parameters: 35(Long), 1(Integer)
+2020-03-19 09:44:05.614 DEBUG 6876 --- [http-nio-8080-exec-9] c.l.f.m.CommentMapper.selectByExample    : <==      Total: 0

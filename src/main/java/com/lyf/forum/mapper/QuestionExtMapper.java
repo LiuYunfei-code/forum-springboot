@@ -139,4 +139,7 @@ public interface QuestionExtMapper {
     int incView(@Param("id") Long id);
     int incCommentCount(@Param("id") Long id);
     List<Question> selectRelated(Question question);
+    long countBySearch(@Param("search")String search);
+
+    List<Question> selectBySearch(@Param("search") String search, @Param("offset") Integer offset,@Param("size") Integer size);
 }

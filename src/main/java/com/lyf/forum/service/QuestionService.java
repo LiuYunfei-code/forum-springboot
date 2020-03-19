@@ -32,9 +32,18 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
-    public PaginationDTO<QuestionDTO> list(Integer page, Integer size) {
+    public PaginationDTO<QuestionDTO> list(String search,Integer page, Integer size) {
         PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO<>();
-        Integer totalCount = (int)questionMapper.countByExample(new QuestionExample());
+        // 判断是否为搜索
+        if (!StringUtils.isBlank(search)){
+            String[] searchs= search.split(" ");
+            search= Arrays.stream(searchs).collect(Collectors.joining("|"));
+        }else {
+            search=null;
+        }
+        // 是搜索就查询和关键相关的记录条数，否则计算总条数
+        Integer totalCount =(int)questionExtMapper.countBySearch(search);
+//        Integer totalCount =(int)questionMapper.countByExample(new QuestionExample());
         // 数据库中没有 question 直接返回
         if (totalCount<=0)
             return paginationDTO;
@@ -52,8 +61,9 @@ public class QuestionService {
 
         QuestionExample questionExample=new QuestionExample();
         // 按创建时间倒序
-        questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questionList = questionMapper.selectByExampleWithRowbounds(questionExample,new RowBounds(offset,size));
+//        questionExample.setOrderByClause("gmt_create desc");
+        List<Question> questionList = questionExtMapper.selectBySearch(search,offset,size);
+//        List<Question> questionList=questionMapper.selectByExampleWithRowbounds(questionExample,new RowBounds(offset,size));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         for (Question question : questionList) {
             UserExample userExample=new UserExample();
